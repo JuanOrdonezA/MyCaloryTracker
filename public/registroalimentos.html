@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro De Alimentos</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>MyCalorieTracker - Registro de Alimentos</title>
+    <link rel="stylesheet" href="css/stylesRegisterAlim.css">
 </head>
 <body>
-    <header>
-        <h1>Registro De Alimentos</h1>
-        <nav>
-            <ul>
-                <a href="index.html">Inicio</a></li>
-                <a href="registroalimentos.html">Registro De Alimentos</a></li>
-                <a href="historial.html">Historial</a></li>
-            </ul>
-        </header>
-    <div class="container">
-        <form id="registroForm">
-            <label for="alimentSelect">Alimento:</label>
-            <select id="alimentSelect" required></select>
-        
-            <label for="cantidad">Cantidad (gramos):</label>
-            <input type="number" id="cantidad" min="0.01" step="0.01" required>
-        
-            <button type="submit">Registrar</button>
-          </form>
-        
-          <div id="mensaje"></div>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
 
-    <script src="/javascript/registro-alimento.js"></script>
+    <main class="main-container">
+        <section class="panel card text-center">
+            <h1 class="text-primary mb-3">MyCalorieTracker</h1>
+            <h5 class="text-secondary mb-4">Registro de Alimentos</h5>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="historial.html">Historial</a></li>
+                </ul>
+            </nav>
+            <form id="registroForm" class="form-spacing">
+                <label for="alimentSelect" class="form-label">Alimento:</label>
+                <select id="alimentSelect" required class="form-control"></select>
+            
+                <label for="cantidad" class="form-label">Cantidad (gramos):</label>
+                <input type="number" id="cantidad" min="0.01" step="0.01" required class="form-control">
+            
+                <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+            </form>
+            
+            <div id="mensaje" class="message-area mt-3"></div>
+        </section>
+    </main>
+
+    <script src="javascript/registro-alimento.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-document.querySelector('.activity-form').addEventListener('submit', async function(e){
+document.querySelector('.form-spacing').addEventListener('submit', async function(e){
     e.preventDefault();
 
     const date = document.getElementById('fechaActividad').value;

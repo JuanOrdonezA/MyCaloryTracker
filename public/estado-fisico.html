@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registrar Información Personal</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <title>MyCalorieTracker - Información Personal</title>
+  <link rel="stylesheet" href="css/stylesPersonalData.css" />
 </head>
 <body>
-  <header>
-    <h1>Registrar Información Personal</h1>
-  </header>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
 
   <main class="main-container">
-    <section class="panel">
-      <form class="form-registro">
-        <label for="weight">Peso (kg):</label>
-        <input type="number" name="weight" id="weight" required><br>
+    <section class="panel card text-center">
+      <h1 class="text-primary mb-3">MyCalorieTracker</h1>
+      <h5 class="text-secondary mb-4">Registrar Información Personal</h5>
+      <form class="form-spacing">
+        <label for="weight" class="form-label">Peso (kg):</label>
+        <input type="number" name="weight" id="weight" required class="form-control"><br>
 
-        <label for="height">Altura (cm):</label>
-        <input type="number" name="height" id="height" required><br>
+        <label for="height" class="form-label">Altura (cm):</label>
+        <input type="number" name="height" id="height" required class="form-control"><br>
 
-        <label for="age">Edad:</label>
-        <input type="number" name="age" id="age" required><br>
+        <label for="age" class="form-label">Edad:</label>
+        <input type="number" name="age" id="age" required class="form-control"><br>
 
-        <label for="daily_goal">Meta Calórica Diaria (kcal):</label>
-        <input type="number" name="daily_goal" id="daily_goal" required><br>
+        <label for="daily_goal" class="form-label">Meta Calórica Diaria (kcal):</label>
+        <input type="number" name="daily_goal" id="daily_goal" required class="form-control"><br>
 
-        <button type="submit" class="btn">Guardar</button>
-        <button type="button" class="btn" onclick="window.location.href='index.html'">Volver</button>
+        <div class="button-group-form">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='index.html'">Volver</button>
+        </div>
       </form>
+      <p class="mt-4" style="font-size: 0.8em; color: #555;">© 2025 MyCalorieTracker. Todos los derechos reservados.</p>
     </section>
   </main>
-
-  <footer>
-    <p>© 2025 MyCalorieTracker. Todos los derechos reservados.</p>
-  </footer>
-<script src="/javascript/estado-fisico.js"></script>
+  <script src="/javascript/estado-fisico.js"></script>
 </body>
 </html>

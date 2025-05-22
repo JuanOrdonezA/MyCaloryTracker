@@ -4,26 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MyCalorieTracker - Inicio</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<header>
-    <h1>MyCalorieTracker</h1>
-  </header>
 <body>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+
   <main class="main-container">
-    <section class="panel">
-      <h2>Panel de Usuario</h2>
+    <section class="panel card text-center">
+      <h1 class="text-primary mb-3">MyCalorieTracker</h1>
+      <h5 class="text-secondary mb-4">Panel de Usuario</h5>
       <div class="button-group">
         <button onclick="window.location.href='registroalimentos.html'">Registro de Comidas</button>
         <button onclick="window.location.href='historial.html'">Ver Consumo Diario</button>
         <button onclick="window.location.href='estado-fisico.html'">Registrar Estado Físico</button>
         <button onclick="window.location.href='actividadfisica.html'">Registro de Actividad Física</button>
-        <button onclick="window.location.href='login.html'">Cerrar Sesión</button>
+        <button class="logout-button" onclick="window.location.href='login.html'">Cerrar Sesión</button>
       </div>
+      <p class="mt-4" style="font-size: 0.8em; color: #555;">© 2025 MyCalorieTracker. Todos los derechos reservados.</p>
     </section>
   </main>
 </body>
-<footer>
-    <p>© 2025 MyCalorieTracker. Todos los derechos reservados.</p>
-  </footer>
 </html>

@@ -1,4 +1,4 @@
-document.querySelector('.form-registro').addEventListener('submit', async function(e) {
+document.querySelector('.form-spacing').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita que se recargue la página
   
     // Capturar los valores del formulario

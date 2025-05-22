@@ -1,58 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Document</title>  
-    <link rel="stylesheet" href="/css/style.css">
+    <title>MyCalorieTracker - Actividad Física</title>
+    <link rel="stylesheet" href="css/stylesActFisica.css">
 </head>
 <body>
-    <header>
-        <h1>Registrar Actividad Física</h1>
-        <nav>
-            <ul>
-                <a href="index.html">Inicio</a></li>
-                <a href="estado-fisico.html">Estado Físico</a></li>
-                <a href="actividadfisica.html">Actividad Física</a></li>
-                <a href="calorias.html">Calorías</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="panel">
-        <form class="activity-form">
-        <label for="fechaActividad">Fecha:</label>
-        <input type="date" id="fechaActividad">
-    
-        <label for="tipoActividad">Tipo de actividad:</label>
-        <input type="text" id="tipoActividad" placeholder="Ej. Correr, Nadar, etc." required>
-    
-        <label for="duracionActividad">Duración (min):</label>
-        <input type="number" id="duracionActividad" placeholder="Minutos">
-    
-        <label for="caloriasQuemadas">Calorías quemadas:</label>
-        <input type="number" id="caloriasQuemadas" placeholder="Calorías">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
 
-    
-        <button type="submit" class="btn">Guardar</button>
-    
-    </form>
-        <h3>Historial de Actividades</h3>
-        <table class="tabla">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Actividad</th>
-                    <th>Duración</th>
-                    <th>Calorías</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="historialActividadFisica"></tbody>
-        </table>
-    
-        <button class="btn" onclick="window.location.href='index.html'">Volver</button>
-    </section>
+    <main class="main-container">
+        <section class="panel card text-center">
+            <h1 class="text-primary mb-3">MyCalorieTracker</h1>
+            <h5 class="text-secondary mb-4">Registro de Actividad Física</h5>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="estado-fisico.html">Estado Físico</a></li>
+                    <li><a href="historial.html">Calorías</a></li>
+                </ul>
+            </nav>
+            <form class="form-spacing">
+                <label for="fechaActividad" class="form-label">Fecha:</label>
+                <input type="date" id="fechaActividad" class="form-control">
+            
+                <label for="tipoActividad" class="form-label">Tipo de actividad:</label>
+                <input type="text" id="tipoActividad" placeholder="Ej. Correr, Nadar, etc." required class="form-control">
+            
+                <label for="duracionActividad" class="form-label">Duración (min):</label>
+                <input type="number" id="duracionActividad" placeholder="Minutos" class="form-control">
+            
+                <label for="caloriasQuemadas" class="form-label">Calorías quemadas:</label>
+                <input type="number" id="caloriasQuemadas" placeholder="Calorías" class="form-control">
+
+                <div class="button-group-form">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='index.html'">Volver</button>
+                </div>
+            </form>
+
+            <h3 class="text-secondary mt-4 mb-3">Historial de Actividades</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Actividad</th>
+                            <th>Duración</th>
+                            <th>Calorías</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historialActividadFisica"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
     <script src="/javascript/actividadfisica.js"></script>
 </body>
 </html>
