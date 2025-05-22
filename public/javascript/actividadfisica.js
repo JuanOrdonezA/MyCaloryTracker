@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    const registrosTableBody = document.getElementById('tabla-actividades');
+
+    res= await fetch('/actividadfisica') 
+    .then(res => res.json())
+    .then(data => {
+    const tbody = document.getElementById('tabla-actividades');
+    data.forEach(act => {
+      const row = `<tr>
+        <td>${act.create_date}</td>
+        <td>${act.act_type}</td>
+        <td>${act.duration}</td>
+        <td>${act.caloriesbur}</td>
+      </tr>`;
+      tbody.innerHTML += row;
+    });
+  });
+
+});
+
+
 document.querySelector('.form-spacing').addEventListener('submit', async function(e){
     e.preventDefault();
 
@@ -17,13 +38,13 @@ document.querySelector('.form-spacing').addEventListener('submit', async functio
             body: JSON.stringify(datos)
         });
 
-        const result = await res.text();
-        alert(result); // Mostrar mensaje del servidor
+    const result = await res.text();
+    alert(result); // Mostrar mensaje del servidor
 
     } catch (error) {
         console.error('Error al enviar datos:', error);
         alert('Hubo un error al guardar la información.');
     }
-   
-    
+ 
 });
+

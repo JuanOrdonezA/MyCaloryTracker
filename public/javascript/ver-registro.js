@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function cargarRegistros() {
     try {
-      const response = await fetch('http://localhost:3000/ver-registro?user_id=1');
+      const response = await fetch('/ver-registro');
       const registros = await response.json();
 
       registrosTableBody.innerHTML = '';

@@ -24,5 +24,27 @@ router.post('/',(req, res) => {
 
 });
 
+router.get('/',(req, res) => {
+  const query = `
+    SELECT 
+      create_date,
+      act_type,
+      duration,
+      caloriesbur
+    FROM activity
+    WHERE user_id = ?
+    ORDER BY create_date DESC
+  `;
+
+  db.execute(query, [req.session.userId], (err, results) => {
+    if (err) {
+      console.error('Error al obtener actividades:', err);
+      return res.status(500).send('Error en el servidor');
+    }
+
+    res.json(results); // Devuelve la lista como JSON para mostrarla en una tabla
+  });
+});
+
 
 module.exports = router;
