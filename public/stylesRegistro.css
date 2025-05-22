@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    animation: float 12s infinite ease-in-out;
+    z-index: 0;
+}
+
+.circle1 {
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    left: -60px;
+}
+
+.circle2 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: -6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 16px;
+    width: 550px;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-img {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 10px;
+}
+
+.form-label {
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+h1.text-primary {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h5.text-secondary {
+    font-size: 1rem;
+    margin-bottom: 1.5rem !important;
+}
+
+.btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+}
