@@ -19,20 +19,18 @@ document.querySelector('.form-registro').addEventListener('submit', async functi
      console.log(datos);
     
     try {
-      const response = await fetch('/estado-fisico', {
+      const res = await fetch('/estado-fisico', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(datos)
       });
   
-      const result = await response.text();
+      const result = await res.text();
   
       alert(result); // Mostrar mensaje del servidor
   
     } catch (error) {
       console.error('Error al enviar datos:', error);
-      alert('❌ Hubo un error al guardar la información.');
+      alert('Hubo un error al guardar la información.');
     }
   });

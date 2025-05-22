@@ -17,11 +17,15 @@ const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const registerAlimentoRoute = require('./routes/registro-alimento');
 const verRegistroRoute = require('./routes/ver-registro');
+const estadoFisicoRoute = require('./routes/estado-fisico');
+const actividadFisicaRoute = require('./routes/actividadfisica');
 
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 app.use('/registro-alimento', registerAlimentoRoute);
 app.use('/ver-registro', verRegistroRoute);
+app.use('/estado-fisico', estadoFisicoRoute);
+app.use('/actividadfisica', actividadFisicaRoute);
 
 // Iniciar servidor
 app.listen(3000, () => {

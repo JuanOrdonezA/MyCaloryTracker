@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             </td>
             <td>${registro.calory_total}</td>
             <td>
-            <td>${registro.date}</td>
               <button class="actualizar-btn" data-id="${registro.id}">Actualizar</button>
             </td>
           `;
