@@ -13,15 +13,16 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify({ email, password })
     });
 
+    
     const text = await res.text();
     messageDiv.textContent = text;
     messageDiv.style.color = res.ok ? 'green' : 'red';
 
     // ✅ Redirigir si el login fue exitoso
     if (res.ok) {
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 1000); // pequeño delay para mostrar el mensaje
+       setTimeout(() => {
+       window.location.href = 'index.html';
+        }, 1000); // pequeño delay para mostrar el mensaje
     }
 
   } catch (error) {

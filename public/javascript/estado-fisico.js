@@ -6,14 +6,13 @@ document.querySelector('.form-registro').addEventListener('submit', async functi
     const height = document.getElementById('height').value;
     const age = document.getElementById('age').value;
     const daily_goal = document.getElementById('daily_goal').value;
-    const user_id = document.getElementById('user_id').value;
+
   
     const datos = {
       weight,
       height,
       age,
       daily_goal,
-      user_id
     };
 
      console.log(datos);

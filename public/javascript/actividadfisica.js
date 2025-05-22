@@ -5,13 +5,14 @@ document.querySelector('.activity-form').addEventListener('submit', async functi
     const type = document.getElementById('tipoActividad').value;
     const duration = document.getElementById('duracionActividad').value;
     const caloriesburned = document.getElementById('caloriasQuemadas').value;
-    const user_id = document.getElementById('user_id').value;
     
-    const datos = {date, type, duration, caloriesburned, user_id };
+    
+    const datos = {date, type, duration, caloriesburned};
 
     try {
         const res = await fetch('/actividadfisica', {
             method: 'POST',
+            credentials : 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(datos)
         });

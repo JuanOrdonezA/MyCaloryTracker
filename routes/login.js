@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const db = require('../db');
+const db = require('../database/db');
 
 router.post('/', (req, res) => {
   const { email, password } = req.body;
@@ -15,16 +15,26 @@ router.post('/', (req, res) => {
     }
 
     const user = results[0];
+    
 
     bcrypt.compare(password, user.password, (err, isMatch) => {
       if (err) return res.status(500).send('Error al verificar contraseña');
       if (isMatch) {
-        res.send('Inicio de sesión exitoso');
-      } else {
-        res.status(401).send('Contraseña incorrecta');
+        req.session.userId = user.id;
+      
+        // Esperar que la sesión se guarde antes de enviar la respuesta
+        req.session.save(err => {
+          if (err) {
+            console.error('Error al guardar la sesión:', err);
+            return res.status(500).send('No se pudo iniciar sesión');
+          }
+      
+          res.send('Inicio de sesión exitoso');
+        });
       }
     });
   });
 });
+
 
 module.exports = router;

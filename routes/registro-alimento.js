@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db'); // Asegúrate de exportar tu conexión desde otro archivo
+const db = require('../database/db'); // Asegúrate de exportar tu conexión desde otro archivo
 
 router.get('/', (req, res) => {
   const query = 'SELECT id, description FROM Aliment WHERE status = 1';
@@ -12,16 +12,16 @@ router.get('/', (req, res) => {
 
 // Ruta para registrar un alimento
 router.post('/', async (req, res) => {
-  const { aliment_id, quantity, user_id } = req.body;
+  const { aliment_id, quantity} = req.body;
 
-  console.log('Datos recibidos:', { aliment_id, quantity, user_id });
+  console.log('Datos recibidos:', { aliment_id, quantity});
 
   try {
     const query = `
       INSERT INTO food_record (quantity, status, created_date, updated_date, aliment_id, user_id)
       VALUES (?, 1, CURDATE(), CURDATE(), ?, ?)
     `;
-    await db.promise().execute(query, [quantity, aliment_id, user_id]);
+    await db.promise().execute(query, [quantity, aliment_id, req.session.userId]);
 
     res.send('Alimento registrado con éxito');
   } catch (error) {

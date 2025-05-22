@@ -25,13 +25,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   
       const aliment_id = select.value;
       const quantity = cantidadInput.value;
-      const user_id = 1; // Asegúrate de que el formulario tenga un atributo data-user-id con el ID del usuario
-  
+      
       try {
         const res = await fetch('/registro-alimento', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ aliment_id, quantity, user_id })
+          body: JSON.stringify({ aliment_id, quantity})
         });
   
         const text = await res.text();
